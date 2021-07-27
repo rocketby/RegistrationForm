@@ -1,1 +1,1 @@
-First version of README.md file!
+The project is about testing registration form!
