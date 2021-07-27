@@ -94,5 +94,4 @@ public class RegistrationPage {
     public void checkRegistrationResultData(String rowName, String enteredValue) {
         $x(format("//td[text()='%s']/following-sibling::td", rowName)).shouldHave(text(enteredValue));
     }
-
 }
