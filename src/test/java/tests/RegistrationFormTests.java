@@ -15,7 +15,6 @@ public class RegistrationFormTests {
     RegistrationPage registrationPage = new RegistrationPage();
     Faker faker = new Faker();
     RandomUtils randomUtils = new RandomUtils();
-    DateAndTimeUtils dateAndTimeUtils = new DateAndTimeUtils();
 
     int phoneNumberLength = 10;
     String firstName = faker.name().firstName();
@@ -71,8 +70,7 @@ public class RegistrationFormTests {
         registrationPage.checkRegistrationResultData("Student Email", email);
         registrationPage.checkRegistrationResultData("Gender", gender);
         registrationPage.checkRegistrationResultData("Mobile", phone);
-        registrationPage.checkRegistrationResultData("Date of Birth",
-                dayOfMonth + " " + dateAndTimeUtils.getMonthNameByNumber((Integer.valueOf(month))) + "," +year);
+        registrationPage.checkRegistrationResultData("Date of Birth", dayOfMonth + " " + DateAndTimeUtils.getMonthNameByNumber(Integer.parseInt(month)) + "," +year);
         registrationPage.checkRegistrationResultData("Subjects", subjectFirst + ", " + subjectSecond + ", " +subjectThird);
         registrationPage.checkRegistrationResultData("Hobbies", hobby);
         registrationPage.checkRegistrationResultData("Picture", fileName);
