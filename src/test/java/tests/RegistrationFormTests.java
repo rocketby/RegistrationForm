@@ -28,6 +28,7 @@ public class RegistrationFormTests {
     String dayOfMonth = "21";
     String subjectFirst = "Maths";
     String subjectSecond = "Accounting";
+    String subjectThird ="Biology";
     String fileLocation = "src/test/resources/";
     String fileName = "flower.jpg";
     String hobby = randomUtils.getRandomHobby();
@@ -56,6 +57,7 @@ public class RegistrationFormTests {
                 .setDateOfBirth(dayOfMonth, month, year)
                 .setSubject(subjectFirst)
                 .setSubject(subjectSecond)
+                .setSubject(subjectThird)
                 .uploadFile(new File(fileLocation + fileName))
                 .setHobby(hobby)
                 .setAddress(address)
@@ -71,7 +73,7 @@ public class RegistrationFormTests {
         registrationPage.checkRegistrationResultData("Mobile", phone);
         registrationPage.checkRegistrationResultData("Date of Birth",
                 dayOfMonth + " " + dateAndTimeUtils.getMonthNameByNumber((Integer.valueOf(month))) + "," +year);
-        registrationPage.checkRegistrationResultData("Subjects", subjectFirst + ", " + subjectSecond);
+        registrationPage.checkRegistrationResultData("Subjects", subjectFirst + ", " + subjectSecond + ", " +subjectThird);
         registrationPage.checkRegistrationResultData("Hobbies", hobby);
         registrationPage.checkRegistrationResultData("Picture", fileName);
         registrationPage.checkRegistrationResultData("Address", address);
